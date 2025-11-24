@@ -1,0 +1,15 @@
+[project]
+name = "mo-zhi"
+version = "0.1.0"
+description = "FastAPI + Loguru + SQLAlchemy(Async) + MySQL"
+requires-python = ">=3.12"
+readme = "README.md"
+authors = [{ name = "mo-zhi" }]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.6.9",
+]
+
+[tool.ruff]
+line-length = 100
