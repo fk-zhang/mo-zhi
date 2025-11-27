@@ -13,7 +13,14 @@ class Settings(BaseSettings):
     mysql_user: str = "root"
     mysql_password: str = "password"
     mysql_db: str = "mo_zhi"
+    mysql_charset: str = "utf8mb4"
 
+    # Connection Pool Settings
+    db_pool_size: int = 20
+    db_max_overflow: int = 10
+    db_pool_timeout: int = 30
+    db_pool_recycle: int = 3600  # Recycle connections after 1 hour
+    db_pool_pre_ping: bool = True
     sqlalchemy_echo: bool = False
 
     @computed_field  # type: ignore[misc]
@@ -22,6 +29,7 @@ class Settings(BaseSettings):
         return (
             f"mysql+asyncmy://{self.mysql_user}:{self.mysql_password}"
             f"@{self.mysql_host}:{self.mysql_port}/{self.mysql_db}"
+            f"?charset={self.mysql_charset}"
         )
 
 
