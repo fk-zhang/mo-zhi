@@ -1,8 +1,23 @@
+# core
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 loguru>=0.7.2
+
+# database
 SQLAlchemy>=2.0.32
 asyncmy>=0.2.9
+motor>=3.3.5
+pymongo>=4.6.1
+
+# Configuration & Validation
 pydantic>=2.9
 pydantic-settings>=2.5.2
 python-dotenv>=1.0.1
+
+# Authentication & Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+
+# Utilities
+python-dateutil>=2.8.2
